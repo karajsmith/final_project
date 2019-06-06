@@ -1,29 +1,16 @@
-<!-- Form ranking start -->
 <form action="/create_ranking_from_destination" method="post">
-<!-- Form ranking end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for destination_id start -->
-  <!-- Input for destination_id start -->
   <input type="hidden" name="destination_id" value="<%= @destination.id %>">
-  <!-- Input for destination_id end -->
 
-  <!-- Label and input for rankings start -->
   <div class="form-group">
     <label for="rankings">
       Rankings
     </label>
 
-    <!-- Input for rankings start -->
     <input type="text" id="rankings" name="rankings" class="form-control" value="<%= @ranking.rankings %>">
-    <!-- Input for rankings end -->
   </div>
-  <!-- Label and input for rankings end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create ranking

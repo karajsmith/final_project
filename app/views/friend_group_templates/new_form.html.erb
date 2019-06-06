@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form friend_group start -->
 <form action="/create_friend_group" method="post">
-<!-- Form friend_group end -->
 
-  <!-- Label and input for friend_request_id start -->
   <div class="form-group">
     <label for="friend_request_id">
       Friend request
     </label>
 
-    <!-- Input for friend_request_id start -->
     <%= select_tag(:friend_request_id, options_from_collection_for_select(FriendRequest.all, :id, :receipient_id, @friend_group.friend_request_id), :class => "form-control") %>
-    <!-- Input for friend_request_id end -->
   </div>
-  <!-- Label and input for friend_request_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for destination_id start -->
   <div class="form-group">
     <label for="destination_id">
       Destination
     </label>
 
-    <!-- Input for destination_id start -->
     <%= select_tag(:destination_id, options_from_collection_for_select(Destination.all, :id, :city, @friend_group.destination_id), :class => "form-control") %>
-    <!-- Input for destination_id end -->
   </div>
-  <!-- Label and input for destination_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create friend group

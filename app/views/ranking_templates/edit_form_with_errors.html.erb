@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @ranking.errors.any? %>
   <% @ranking.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,36 +12,24 @@
 
 <hr>
 
-<!-- Form ranking start -->
 <form action="/update_ranking/<%= @ranking.id %>" method="post">
-<!-- Form ranking end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for destination_id start -->
   <div class="form-group">
     <label for="destination_id">
       Destination
     </label>
 
-    <!-- Input for destination_id start -->
     <%= select_tag(:destination_id, options_from_collection_for_select(Destination.all, :id, :city, @ranking.destination_id), :class => "form-control") %>
-    <!-- Input for destination_id end -->
   </div>
-  <!-- Label and input for destination_id end -->
 
-  <!-- Label and input for rankings start -->
   <div class="form-group">
     <label for="rankings">
       Rankings
     </label>
 
-    <!-- Input for rankings start -->
     <input type="text" id="rankings" name="rankings" class="form-control" value="<%= @ranking.rankings %>">
-    <!-- Input for rankings end -->
   </div>
-  <!-- Label and input for rankings end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update ranking

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "ranking_templates/rankings_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @rankings.each do |ranking| %>
       <tr>
-        <!-- Display ranking.id start -->
         <td>
           <%= ranking.id %>
         </td>
-        <!-- Display ranking.id end -->
 
-        <!-- Display ranking.user_id start -->
         <td>
           <% if ranking.user.present? %>
             <a href="/users/<%= ranking.user.id %>">
@@ -72,9 +65,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display ranking.user_id end -->
 
-        <!-- Display ranking.destination_id start -->
         <td>
           <% if ranking.destination.present? %>
             <a href="/destinations/<%= ranking.destination.id %>">
@@ -82,25 +73,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display ranking.destination_id end -->
 
-        <!-- Display ranking.rankings start -->
         <td>
           <%= ranking.rankings %>
         </td>
-        <!-- Display ranking.rankings end -->
 
-        <!-- Display ranking.created_at start -->
         <td>
           <%= time_ago_in_words(ranking.created_at) %> ago
         </td>
-        <!-- Display ranking.created_at end -->
 
-        <!-- Display ranking.updated_at start -->
         <td>
           <%= time_ago_in_words(ranking.updated_at) %> ago
         </td>
-        <!-- Display ranking.updated_at end -->
 
         <td>
           <a href="/rankings/<%= ranking.id %>">

@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link destination start -->
       <div class="col">
         <a href="/destinations/<%= @destination.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit destination
         </a>
       </div>
-      <!-- Edit link destination end -->
 
-      <!-- Delete link destination start -->
       <div class="col">
         <a href="/delete_destination/<%= @destination.id %>" class="btn btn-block btn-outline-secondary">
           Delete destination
         </a>
       </div>
-      <!-- Delete link destination end -->
     </div>
 
     <dl>
       <dt>
         City
       </dt>
-      <!-- Display city start -->
       <dd>
         <%= @destination.city %>
       </dd>
-      <!-- Display city end -->
 
       <dt>
         Country
       </dt>
-      <!-- Display country start -->
       <dd>
         <%= @destination.country %>
       </dd>
-      <!-- Display country end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@destination.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@destination.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "destination_templates/destination_rankings" %>
@@ -80,4 +67,3 @@
     <%= render partial: "destination_templates/destination_friend_groups" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

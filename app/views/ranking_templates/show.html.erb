@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link ranking start -->
       <div class="col">
         <% if current_user == @ranking.user %>
           <a href="/rankings/<%= @ranking.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link ranking end -->
 
-      <!-- Delete link ranking start -->
       <div class="col">
         <% if current_user == @ranking.user %>
           <a href="/delete_ranking/<%= @ranking.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link ranking end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @ranking.user.present? %>
           <a href="/users/<%= @ranking.user_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Destination
       </dt>
-      <!-- Display destination_id start -->
       <dd>
         <% if @ranking.destination.present? %>
           <a href="/destinations/<%= @ranking.destination_id %>">
@@ -57,37 +50,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display destination_id end -->
 
       <dt>
         Rankings
       </dt>
-      <!-- Display rankings start -->
       <dd>
         <%= @ranking.rankings %>
       </dd>
-      <!-- Display rankings end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ranking.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ranking.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

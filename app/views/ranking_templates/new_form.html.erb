@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form ranking start -->
 <form action="/create_ranking" method="post">
-<!-- Form ranking end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for destination_id start -->
   <div class="form-group">
     <label for="destination_id">
       Destination
     </label>
 
-    <!-- Input for destination_id start -->
     <%= select_tag(:destination_id, options_from_collection_for_select(Destination.all, :id, :city, @ranking.destination_id), :class => "form-control") %>
-    <!-- Input for destination_id end -->
   </div>
-  <!-- Label and input for destination_id end -->
 
-  <!-- Label and input for rankings start -->
   <div class="form-group">
     <label for="rankings">
       Rankings
     </label>
 
-    <!-- Input for rankings start -->
     <input type="text" id="rankings" name="rankings" class="form-control">
-    <!-- Input for rankings end -->
   </div>
-  <!-- Label and input for rankings end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create ranking

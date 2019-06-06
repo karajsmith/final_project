@@ -1,35 +1,22 @@
-<!-- Form friend_group start -->
 <form action="/create_friend_group_from_friend_request" method="post">
-<!-- Form friend_group end -->
 
-  <!-- Label and input for friend_request_id start -->
-  <!-- Input for friend_request_id start -->
   <input type="hidden" name="friend_request_id" value="<%= @friend_request.id %>">
-  <!-- Input for friend_request_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @friend_group.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for destination_id start -->
   <div class="form-group">
     <label for="destination_id">
       Destination
     </label>
 
-    <!-- Input for destination_id start -->
     <%= select_tag(:destination_id, options_from_collection_for_select(Destination.all, :id, :city, @friend_group.destination_id), :class => "form-control") %>
-    <!-- Input for destination_id end -->
   </div>
-  <!-- Label and input for destination_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create friend group
