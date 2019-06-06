@@ -13,17 +13,21 @@
 
       <!-- Edit link ranking start -->
       <div class="col">
-        <a href="/rankings/<%= @ranking.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit ranking
-        </a>
+        <% if current_user == @ranking.user %>
+          <a href="/rankings/<%= @ranking.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit ranking
+          </a>
+        <% end %>
       </div>
       <!-- Edit link ranking end -->
 
       <!-- Delete link ranking start -->
       <div class="col">
-        <a href="/delete_ranking/<%= @ranking.id %>" class="btn btn-block btn-outline-secondary">
-          Delete ranking
-        </a>
+        <% if current_user == @ranking.user %>
+          <a href="/delete_ranking/<%= @ranking.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete ranking
+          </a>
+        <% end %>
       </div>
       <!-- Delete link ranking end -->
     </div>

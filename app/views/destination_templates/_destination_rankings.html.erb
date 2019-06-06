@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_ranking_from_destination/<%= ranking.id %>">
-          Delete
-        </a>
+        <%if current_user == ranking.user %>
+          <a href="/delete_ranking_from_destination/<%= ranking.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
