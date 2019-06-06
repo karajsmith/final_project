@@ -4,6 +4,8 @@ RSpec.describe FriendGroup, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:friend_request) }
+
     it { should belong_to(:destination) }
 
     end
