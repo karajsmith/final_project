@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Friend group #<%= @friend_group.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/friend_groups" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link friend_group start -->
+      <div class="col">
+        <a href="/friend_groups/<%= @friend_group.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit friend group
+        </a>
+      </div>
+      <!-- Edit link friend_group end -->
+
+      <!-- Delete link friend_group start -->
+      <div class="col">
+        <a href="/delete_friend_group/<%= @friend_group.id %>" class="btn btn-block btn-outline-secondary">
+          Delete friend group
+        </a>
+      </div>
+      <!-- Delete link friend_group end -->
+    </div>
+
+    <dl>
+      <dt>
+        Friend request
+      </dt>
+      <!-- Display friend_request_id start -->
+      <dd>
+        <%= @friend_group.friend_request_id %>
+      </dd>
+      <!-- Display friend_request_id end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @friend_group.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Destination
+      </dt>
+      <!-- Display destination_id start -->
+      <dd>
+        <%= @friend_group.destination_id %>
+      </dd>
+      <!-- Display destination_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@friend_group.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@friend_group.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
