@@ -4,6 +4,8 @@ RSpec.describe Destination, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:friend_groups) }
+
     it { should have_many(:rankings) }
 
     end
