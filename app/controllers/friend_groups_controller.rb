@@ -1,6 +1,7 @@
 class FriendGroupsController < ApplicationController
   def index
-    @friend_groups = FriendGroup.page(params[:page]).per(10)
+    @q = FriendGroup.ransack(params[:q])
+    @friend_groups = @q.result(:distinct => true).includes(:destination, :friend_request).page(params[:page]).per(10)
 
     render("friend_group_templates/index.html.erb")
   end
