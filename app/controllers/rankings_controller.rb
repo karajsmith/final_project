@@ -55,6 +55,22 @@ class RankingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @ranking = Ranking.find(params.fetch("id_to_remove"))
+
+    @ranking.destroy
+
+    redirect_to("/users/#{@ranking.user_id}", notice: "Ranking deleted successfully.")
+  end
+
+  def destroy_row_from_destination
+    @ranking = Ranking.find(params.fetch("id_to_remove"))
+
+    @ranking.destroy
+
+    redirect_to("/destinations/#{@ranking.destination_id}", notice: "Ranking deleted successfully.")
+  end
+
   def destroy_row
     @ranking = Ranking.find(params.fetch("id_to_remove"))
 

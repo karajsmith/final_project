@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friend_request/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row" })
+  get("/delete_friend_request_from_receipient/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_receipient" })
+  get("/delete_friend_request_from_sender/:id_to_remove", { :controller => "friend_requests", :action => "destroy_row_from_sender" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_ranking/:id_to_remove", { :controller => "rankings", :action => "destroy_row" })
+  get("/delete_ranking_from_destination/:id_to_remove", { :controller => "rankings", :action => "destroy_row_from_destination" })
+  get("/delete_ranking_from_user/:id_to_remove", { :controller => "rankings", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +60,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friend_group/:id_to_remove", { :controller => "friend_groups", :action => "destroy_row" })
+  get("/delete_friend_group_from_friend_request/:id_to_remove", { :controller => "friend_groups", :action => "destroy_row_from_friend_request" })
+  get("/delete_friend_group_from_destination/:id_to_remove", { :controller => "friend_groups", :action => "destroy_row_from_destination" })
 
   #------------------------------
 

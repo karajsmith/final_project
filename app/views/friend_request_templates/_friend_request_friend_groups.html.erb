@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Friend Groups
+
+    <a data-toggle="collapse" href="#friend_request_friend_groups_new_form">
+      Add friend group
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @friend_request.friend_groups.each do |friend_group| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/friend_groups/<%= friend_group.id %>">
+          <%= friend_group.friend_request_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_friend_group_from_friend_request/<%= friend_group.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="friend_request_friend_groups_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

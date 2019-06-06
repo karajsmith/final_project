@@ -55,6 +55,22 @@ class FriendGroupsController < ApplicationController
     end
   end
 
+  def destroy_row_from_destination
+    @friend_group = FriendGroup.find(params.fetch("id_to_remove"))
+
+    @friend_group.destroy
+
+    redirect_to("/destinations/#{@friend_group.destination_id}", notice: "FriendGroup deleted successfully.")
+  end
+
+  def destroy_row_from_friend_request
+    @friend_group = FriendGroup.find(params.fetch("id_to_remove"))
+
+    @friend_group.destroy
+
+    redirect_to("/friend_requests/#{@friend_group.friend_request_id}", notice: "FriendGroup deleted successfully.")
+  end
+
   def destroy_row
     @friend_group = FriendGroup.find(params.fetch("id_to_remove"))
 
