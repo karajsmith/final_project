@@ -4,6 +4,8 @@ RSpec.describe Ranking, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:destination) }
+
     it { should belong_to(:user) }
 
     end
