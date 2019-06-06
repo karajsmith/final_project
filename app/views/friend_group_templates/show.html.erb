@@ -34,7 +34,11 @@
       </dt>
       <!-- Display friend_request_id start -->
       <dd>
-        <%= @friend_group.friend_request_id %>
+        <% if @friend_group.friend_request.present? %>
+          <a href="/friend_requests/<%= @friend_group.friend_request_id %>">
+            <%= @friend_group.friend_request.receipient_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display friend_request_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display destination_id start -->
       <dd>
-        <%= @friend_group.destination_id %>
+        <% if @friend_group.destination.present? %>
+          <a href="/destinations/<%= @friend_group.destination_id %>">
+            <%= @friend_group.destination.city %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display destination_id end -->
 

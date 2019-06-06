@@ -62,13 +62,21 @@
 
         <!-- Display friend_request.receipient_id start -->
         <td>
-          <%= friend_request.receipient.username %>
+          <% if friend_request.receipient.present? %>
+            <a href="/users/<%= friend_request.receipient.id %>">
+              <%= friend_request.receipient.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend_request.receipient_id end -->
 
         <!-- Display friend_request.sender_id start -->
         <td>
-          <%= friend_request.sender.username %>
+          <% if friend_request.sender.present? %>
+            <a href="/users/<%= friend_request.sender.id %>">
+              <%= friend_request.sender.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend_request.sender_id end -->
 

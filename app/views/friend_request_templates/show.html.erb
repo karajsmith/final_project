@@ -34,7 +34,11 @@
       </dt>
       <!-- Display receipient_id start -->
       <dd>
-        <%= @friend_request.receipient_id %>
+        <% if @friend_request.receipient.present? %>
+          <a href="/users/<%= @friend_request.receipient_id %>">
+            <%= @friend_request.receipient.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display receipient_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display sender_id start -->
       <dd>
-        <%= @friend_request.sender_id %>
+        <% if @friend_request.sender.present? %>
+          <a href="/users/<%= @friend_request.sender_id %>">
+            <%= @friend_request.sender.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sender_id end -->
 

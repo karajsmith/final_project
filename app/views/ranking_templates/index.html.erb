@@ -62,13 +62,21 @@
 
         <!-- Display ranking.user_id start -->
         <td>
-          <%= ranking.user.username %>
+          <% if ranking.user.present? %>
+            <a href="/users/<%= ranking.user.id %>">
+              <%= ranking.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ranking.user_id end -->
 
         <!-- Display ranking.destination_id start -->
         <td>
-          <%= ranking.destination.city %>
+          <% if ranking.destination.present? %>
+            <a href="/destinations/<%= ranking.destination.id %>">
+              <%= ranking.destination.city %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ranking.destination_id end -->
 

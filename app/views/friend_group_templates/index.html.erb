@@ -62,7 +62,11 @@
 
         <!-- Display friend_group.friend_request_id start -->
         <td>
-          <%= friend_group.friend_request.receipient_id %>
+          <% if friend_group.friend_request.present? %>
+            <a href="/friend_requests/<%= friend_group.friend_request.id %>">
+              <%= friend_group.friend_request.receipient_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend_group.friend_request_id end -->
 
@@ -74,7 +78,11 @@
 
         <!-- Display friend_group.destination_id start -->
         <td>
-          <%= friend_group.destination.city %>
+          <% if friend_group.destination.present? %>
+            <a href="/destinations/<%= friend_group.destination.id %>">
+              <%= friend_group.destination.city %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend_group.destination_id end -->
 

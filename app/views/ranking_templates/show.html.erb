@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @ranking.user_id %>
+        <% if @ranking.user.present? %>
+          <a href="/users/<%= @ranking.user_id %>">
+            <%= @ranking.user.username %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display destination_id start -->
       <dd>
-        <%= @ranking.destination_id %>
+        <% if @ranking.destination.present? %>
+          <a href="/destinations/<%= @ranking.destination_id %>">
+            <%= @ranking.destination.city %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display destination_id end -->
 
