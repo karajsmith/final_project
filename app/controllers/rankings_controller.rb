@@ -10,7 +10,7 @@ class RankingsController < ApplicationController
   end
 
   def index
-    @rankings = Ranking.all
+    @rankings = Ranking.page(params[:page]).per(10)
 
     render("ranking_templates/index.html.erb")
   end
