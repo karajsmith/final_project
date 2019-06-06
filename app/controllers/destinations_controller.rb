@@ -6,6 +6,8 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @friend_group = FriendGroup.new
+    @ranking = Ranking.new
     @destination = Destination.find(params.fetch("id_to_display"))
 
     render("destination_templates/show.html.erb")

@@ -33,6 +33,38 @@ class FriendGroupsController < ApplicationController
     end
   end
 
+  def create_row_from_destination
+    @friend_group = FriendGroup.new
+
+    @friend_group.friend_request_id = params.fetch("friend_request_id")
+    @friend_group.name = params.fetch("name")
+    @friend_group.destination_id = params.fetch("destination_id")
+
+    if @friend_group.valid?
+      @friend_group.save
+
+      redirect_to("/destinations/#{@friend_group.destination_id}", notice: "FriendGroup created successfully.")
+    else
+      render("friend_group_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_friend_request
+    @friend_group = FriendGroup.new
+
+    @friend_group.friend_request_id = params.fetch("friend_request_id")
+    @friend_group.name = params.fetch("name")
+    @friend_group.destination_id = params.fetch("destination_id")
+
+    if @friend_group.valid?
+      @friend_group.save
+
+      redirect_to("/friend_requests/#{@friend_group.friend_request_id}", notice: "FriendGroup created successfully.")
+    else
+      render("friend_group_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @friend_group = FriendGroup.find(params.fetch("prefill_with_id"))
 

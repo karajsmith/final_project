@@ -1,0 +1,37 @@
+<!-- Form friend_group start -->
+<form action="/create_friend_group_from_destination" method="post">
+<!-- Form friend_group end -->
+
+  <!-- Label and input for friend_request_id start -->
+  <div class="form-group">
+    <label for="friend_request_id">
+      Friend request
+    </label>
+
+    <!-- Input for friend_request_id start -->
+    <input type="text" id="friend_request_id" name="friend_request_id" class="form-control" value="<%= @friend_group.friend_request_id %>">
+    <!-- Input for friend_request_id end -->
+  </div>
+  <!-- Label and input for friend_request_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @friend_group.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for destination_id start -->
+  <!-- Input for destination_id start -->
+  <input type="hidden" name="destination_id" value="<%= @destination.id %>">
+  <!-- Input for destination_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create friend group
+  </button>
+</form>

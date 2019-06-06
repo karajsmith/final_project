@@ -6,6 +6,7 @@ class FriendRequestsController < ApplicationController
   end
 
   def show
+    @friend_group = FriendGroup.new
     @friend_request = FriendRequest.find(params.fetch("id_to_display"))
 
     render("friend_request_templates/show.html.erb")

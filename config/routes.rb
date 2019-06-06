@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/rankings/new", { :controller => "rankings", :action => "new_form" })
   post("/create_ranking", { :controller => "rankings", :action => "create_row" })
+  post("/create_ranking_from_destination", { :controller => "rankings", :action => "create_row_from_destination" })
 
   # READ
   get("/rankings", { :controller => "rankings", :action => "index" })
@@ -49,6 +50,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/friend_groups/new", { :controller => "friend_groups", :action => "new_form" })
   post("/create_friend_group", { :controller => "friend_groups", :action => "create_row" })
+  post("/create_friend_group_from_friend_request", { :controller => "friend_groups", :action => "create_row_from_friend_request" })
+  post("/create_friend_group_from_destination", { :controller => "friend_groups", :action => "create_row_from_destination" })
 
   # READ
   get("/friend_groups", { :controller => "friend_groups", :action => "index" })
