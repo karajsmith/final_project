@@ -58,7 +58,7 @@ class RankingsController < ApplicationController
   def update_row
     @ranking = Ranking.find(params.fetch("id_to_modify"))
 
-    @ranking.user_id = params.fetch("user_id")
+    
     @ranking.destination_id = params.fetch("destination_id")
     @ranking.rankings = params.fetch("rankings")
 
