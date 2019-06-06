@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Ranking resource:
+
+  # CREATE
+  get("/rankings/new", { :controller => "rankings", :action => "new_form" })
+  post("/create_ranking", { :controller => "rankings", :action => "create_row" })
+
+  # READ
+  get("/rankings", { :controller => "rankings", :action => "index" })
+  get("/rankings/:id_to_display", { :controller => "rankings", :action => "show" })
+
+  # UPDATE
+  get("/rankings/:prefill_with_id/edit", { :controller => "rankings", :action => "edit_form" })
+  post("/update_ranking/:id_to_modify", { :controller => "rankings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_ranking/:id_to_remove", { :controller => "rankings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Friend group resource:
 
   # CREATE

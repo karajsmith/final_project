@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @ranking.errors.any? %>
+  <% @ranking.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit ranking #<%= @ranking.id %>
+</h1>
+
+<hr>
+
+<!-- Form ranking start -->
+<form action="/update_ranking/<%= @ranking.id %>" method="post">
+<!-- Form ranking end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @ranking.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for destination_id start -->
+  <div class="form-group">
+    <label for="destination_id">
+      Destination
+    </label>
+
+    <!-- Input for destination_id start -->
+    <input type="text" id="destination_id" name="destination_id" class="form-control" value="<%= @ranking.destination_id %>">
+    <!-- Input for destination_id end -->
+  </div>
+  <!-- Label and input for destination_id end -->
+
+  <!-- Label and input for rankings start -->
+  <div class="form-group">
+    <label for="rankings">
+      Rankings
+    </label>
+
+    <!-- Input for rankings start -->
+    <input type="text" id="rankings" name="rankings" class="form-control" value="<%= @ranking.rankings %>">
+    <!-- Input for rankings end -->
+  </div>
+  <!-- Label and input for rankings end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update ranking
+  </button>
+</form>
+
+<hr>
+
+<a href="/rankings">
+  Go back
+</a>
